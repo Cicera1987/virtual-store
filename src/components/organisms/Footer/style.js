@@ -5,7 +5,7 @@ export const UniversalFooter = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: first baseline;
-  background-color:#FFFAF0;
+  background-color:#F0FFF0;
 `
 
 export const FooterIcon = styled.div`

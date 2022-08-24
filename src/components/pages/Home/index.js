@@ -1,10 +1,11 @@
 import React from 'react'
+import { ContainerHome} from './style'
 
 const Home = () => {
   return (
-    <div>
+    <ContainerHome>
         <h1>Home</h1>
-        </div>
+    </ContainerHome>
   )
 }
 

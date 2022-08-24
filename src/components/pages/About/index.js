@@ -1,10 +1,12 @@
 import React from 'react'
 
+import { ContainerAbout } from './style'
+
 const About = () => {
   return (
-    <div>
+    <ContainerAbout>
         <h1>Sobre</h1>
-    </div>
+    </ContainerAbout>
   )
 }
 

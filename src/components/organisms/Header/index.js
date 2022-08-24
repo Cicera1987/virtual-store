@@ -1,11 +1,12 @@
 import React from 'react'
 import { HeaderList } from './style'
-import Headder from '../../img/headder.jpg'
+import Banner01 from '../../img/Banner01.jpg'
+
 
 const Header = () => {
   return (
     <HeaderList>
-      <img width="100%" height="400px" src={Headder} />
+      <img width="95%" height="300px" src={Banner01} />
     </HeaderList>
   )
 }

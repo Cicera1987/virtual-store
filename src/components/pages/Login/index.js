@@ -1,10 +1,11 @@
 import React from 'react'
+import { FormLogin} from "./style";
 
 const Login = () => {
   return (
-    <div>
+    < FormLogin>
         <h1>Login</h1>
-    </div>
+    </FormLogin>
   )
 }
 
