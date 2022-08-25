@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useEffect, useContext } from 'react'
+import { useState, useContext } from 'react'
 import { ButtonLogin } from '../../atoms/Buttons/ButtonLogin/style';
 import { FormLogin, LoginEnter, LabelContainer, ContainerTitleLogin } from "./style";
 import { useNavigate } from "react-router-dom";
@@ -7,15 +7,11 @@ import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
   const [form, setForm] = useState('')
-  const [show, setShow] = useState(false)
-
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
+  const [users, setUsers] = useState()
+  const navigate = useNavigate();
 
   const { setAuth, auth } = useContext(AuthContext)
-  console.log('auth', auth)
-
-  const navigate = useNavigate();
+  console.log(auth)
 
   function handleChange(event) {
     setForm({ ...form, [event.target.name]: event.target.value })
@@ -24,7 +20,10 @@ const Login = () => {
 
   function handleSubmit(event) {
     event.preventDefault()
-    if (form.email == 'maccicera@gmail.com' && form.password == '123') {
+    localStorage.setItem("users", "Adim",)
+    localStorage.getItem('users')
+    setUsers(users)
+    if (form.email === 'ccica_25@hotmail.com' && form.password === '123') {
       setAuth(true)
       navigate("/home");
       window.alert('logado com sucesso')
@@ -34,34 +33,37 @@ const Login = () => {
     }
   }
 
+
   return (
-    <LoginEnter>  
+    <LoginEnter>
       <FormLogin onSubmit={handleSubmit} >
         <ContainerTitleLogin>Entrar</ContainerTitleLogin >
-      <LabelContainer>
-        <span>E-mail: </span>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          required
-          placeholder="Insira seu e-mail"
+        <LabelContainer>
+          <span>E-mail: </span>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={users}
+            required
+            placeholder="Insira seu e-mail"
             onChange={handleChange}
-        />
-      </LabelContainer>
-      <LabelContainer>
-        <span>Senha:</span>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          required
-          placeholder="Insira sua Senha"
+          />
+        </LabelContainer>
+        <LabelContainer>
+          <span>Senha:</span>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            value={users}
+            required
+            placeholder="Insira sua Senha"
             onChange={handleChange}
-        />
-      </LabelContainer> 
-        <ButtonLogin type="submit">Login</ButtonLogin>   
-    </FormLogin>   
+          />
+        </LabelContainer>
+        <ButtonLogin type="submit">Login</ButtonLogin>
+      </FormLogin>
     </LoginEnter>
   )
 }

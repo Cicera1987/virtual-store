@@ -8,15 +8,13 @@ import Header from '../organisms/Header'
 import Footer from '../organisms/Footer'
 import Showcase from '../pages/Showcase'
 
-import { AuthProvider } from '../context/AuthContext'
-
 const PrivateRoutes = () => {
   return (
     <BrowserRouter>
       <NavBar />
       <Header />
       <Routes>
-        <Route path="/showcase" element={<Showcase />} />
+        <Route path="/" element={<Showcase />}/>
         <Route path="/home" element={<Home/>}/>
         <Route path="/login" element={<Login />} />
         <Route path='/about' element={<About />} />   
