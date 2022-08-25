@@ -8,6 +8,7 @@ import Header from '../organisms/Header'
 import Footer from '../organisms/Footer'
 
 const PublicRoutes = () => {
+    console.log("public")
     return (
         <BrowserRouter>
             <NavBar/>

@@ -8,10 +8,11 @@ import { AuthContext } from "../../context/AuthContext";
 const Login = () => {
   const [form, setForm] = useState('')
   const [users, setUsers] = useState()
-  const navigate = useNavigate();
+
 
   const { setAuth, auth } = useContext(AuthContext)
-  console.log(auth)
+
+  const navigate = useNavigate();
 
   function handleChange(event) {
     setForm({ ...form, [event.target.name]: event.target.value })
@@ -20,7 +21,7 @@ const Login = () => {
 
   function handleSubmit(event) {
     event.preventDefault()
-    localStorage.setItem("users", "Adim",)
+    localStorage.setItem("users", "Adm",)
     localStorage.getItem('users')
     setUsers(users)
     if (form.email === 'ccica_25@hotmail.com' && form.password === '123') {

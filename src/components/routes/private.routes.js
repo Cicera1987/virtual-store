@@ -7,20 +7,24 @@ import NavBar from '../molecules/NavBar'
 import Header from '../organisms/Header'
 import Footer from '../organisms/Footer'
 import Showcase from '../pages/Showcase'
+import AuthProvider from '../context/AuthContext'
 
 const PrivateRoutes = () => {
+  console.log("private")
   return (
+
     <BrowserRouter>
       <NavBar />
       <Header />
       <Routes>
         <Route path="/" element={<Showcase />}/>
-        <Route path="/home" element={<Home/>}/>
+        <Route path="/home" element={<Home/>}/>  
         <Route path="/login" element={<Login />} />
         <Route path='/about' element={<About />} />   
-      </Routes>
+      </Routes>     
       <Footer />
     </BrowserRouter>
+   
 
   )
 }
