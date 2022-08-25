@@ -29,3 +29,19 @@ export const StyleLink = styled(Link)`
     color: #B0C4DE;
 }
 `
+export const CardIcon = styled.div`
+    display:flex;
+    flex-direction:row;
+    justify-content: flex-end;
+    align-items: flex-end
+    position: absolute;
+    margin: 0 10px;
+    bottom:0.7em ;
+    
+svg {
+    cursor: pointer;
+    font-size: 1.3rem;
+
+
+}
+`

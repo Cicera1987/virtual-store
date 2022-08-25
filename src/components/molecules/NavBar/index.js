@@ -1,24 +1,26 @@
 import React from 'react' 
-import { NavLink } from 'react-router-dom'
-import { PageNavbar, LinkList, LinkListLi, StyleLink } from './style'
+import { VscGear } from "react-icons/vsc";
+import { PageNavbar, LinkList, LinkListLi, StyleLink, CardIcon } from './style'
 
 const NavBar = () => {
 
   return <PageNavbar>
-    <StyleLink to="/">
+    <StyleLink to="/showcase">
       Show <span>Case</span></StyleLink>
     <LinkList>
 
-    <LinkListLi>
+    {/* <LinkListLi>
         <StyleLink to="/">Home</StyleLink>
-    </LinkListLi>
+    </LinkListLi> */}
 
       <LinkListLi>
         <StyleLink to="/about">Sobre</StyleLink>
       </LinkListLi>
 
       <LinkListLi>
-        <StyleLink to="/login">Login</StyleLink>
+        <CardIcon>
+          <StyleLink to="/login"><VscGear/></StyleLink>
+        </CardIcon>
       </LinkListLi>
     </LinkList>
   </PageNavbar>

@@ -1,10 +1,11 @@
 import React from 'react'
+import { ContainerVitrine } from './style'
 
 const Showcase = () => {
   return (
-    <div>
+    <ContainerVitrine>
         <h1>Vitrine</h1>
-    </div>
+    </ContainerVitrine>
   )
 }
 

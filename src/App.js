@@ -1,32 +1,17 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
-import Home from './components/pages/Home'
-import About from './components/pages/About'
-
-import NavBar from './components/molecules/NavBar'
-import Footer from './components/organisms/Footer';
-import Login from './components/pages/Login';
-import Header from './components/organisms/Header';
+import React,{useContext} from 'react';
+import PrivateRoutes from './components/routes/private.routes';
+import PublicRoutes from './components/routes/public.routes';
+import {AuthContext} from './components/context/AuthContext'
 
 
 function App() {
+  const {auth} = useContext(AuthContext)
 
-
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <NavBar />
-        <Header/>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About/>} />
-          <Route path='/login' element={<Login />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-
-    </div>
-  );
+  return auth ? <PrivateRoutes/> : <PublicRoutes/>
 }
 
 export default App;
+
+
+
