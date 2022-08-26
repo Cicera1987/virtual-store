@@ -1,10 +1,12 @@
 import React from 'react'
-import { ContainerVitrine } from './style'
+import { ContainerVitrine, ContainerProdutos, ItemProdutos } from './style'
+
 
 const Showcase = () => {
   return (
     <ContainerVitrine>
-        <h1>Vitrine</h1>
+      <h1>Vitrine</h1>
+      
     </ContainerVitrine>
   )
 }

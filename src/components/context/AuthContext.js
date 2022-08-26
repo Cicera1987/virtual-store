@@ -1,14 +1,17 @@
 import React, { createContext, useEffect, useState } from "react";
+import App from "../../App";
+
 
 export const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
     const [auth, setAuth] = useState(false)
+    const [produtos, setProdutos] = useState([])
     const token = localStorage.getItem("users") || null
 
     useEffect(() => {
         if (token !== null && token === "Adm") {
-            setAuth(true)                        
+            setAuth(true)
         }
         else {
             setAuth(false)

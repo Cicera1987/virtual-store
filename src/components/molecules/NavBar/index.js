@@ -10,6 +10,9 @@ const NavBar = () => {
       <LinkListLi>
         <StyleLink to="/home">Home</StyleLink>
       </LinkListLi>
+      <LinkListLi>
+        <StyleLink to="/Product">Product</StyleLink>
+      </LinkListLi>
 
       <LinkListLi>
         <StyleLink to="/about">Sobre</StyleLink>

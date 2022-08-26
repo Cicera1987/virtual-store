@@ -1,13 +1,14 @@
 import React from 'react'
 import AuthProvider from '../../context/AuthContext'
-import { ContainerHome} from './style'
+import { ContainerProdutos } from '../Showcase/style';
 
-const Home = () => {
+const Home = (props) => {
+
   return (
     <AuthProvider>
-    <ContainerHome>
-        <h1>Home</h1>
-    </ContainerHome>
+      <ContainerProdutos>
+        <h3>Tentando renderizar minha lista de produtos</h3>
+      </ContainerProdutos>
     </AuthProvider>
   )
 }
