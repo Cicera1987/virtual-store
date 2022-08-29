@@ -7,17 +7,23 @@ export const ContaineItem = styled.div`
     width: 95%;
     padding: 0 20px;
     margin-top: 5px;
+
+
 `
 export const ContainerVitrine = styled.div`
     width: 90%;
     display: flex;
     flex-wrap: wrap;
-    padding : 3em 2em;
+    padding : 2em;
+    font-size: 18px;
+    
+
 `
 
 export const ContainerProduto = styled.div`
     box-shadow: 2px 2px 4px black;
     overflow: hiden;
-    height: 500px;
+    height: 540px;
     width: 400px
+    
 `

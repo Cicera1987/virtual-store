@@ -7,15 +7,20 @@ const NavBar = () => {
   return <PageNavbar>
     <StyleLink to="/">Show Case</StyleLink>
     <LinkList>
+    
       <LinkListLi>
         <StyleLink to="/home">Home</StyleLink>
       </LinkListLi>
+
       <LinkListLi>
-        <StyleLink to="/Product">Product</StyleLink>
+        <StyleLink to="/catalogo">Catalogo</StyleLink>
       </LinkListLi>
 
       <LinkListLi>
-        <StyleLink to="/about">Sobre</StyleLink>
+        <StyleLink to="/Product">Product</StyleLink>
+      </LinkListLi>
+      <LinkListLi>
+        <StyleLink to="/upload">Upload</StyleLink>
       </LinkListLi>
 
       <LinkListLi>
