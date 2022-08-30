@@ -21,7 +21,7 @@ class Produto{
   }
 }
 
-let p1 = new Produto(1001, "Bousa Dual", 100, "https://img.freepik.com/fotos-gratis/cor-mulher-luxuosa-elegancia-roxa_1203-6518.jpg?size=338&ext=jpg&ga=GA1.2.843074877.1661354717");
+let p1 = new Produto(1001, "Bolsa Dual", 100, "https://img.freepik.com/fotos-gratis/cor-mulher-luxuosa-elegancia-roxa_1203-6518.jpg?size=338&ext=jpg&ga=GA1.2.843074877.1661354717");
 let p2 = new Produto(1002, "Bolsa LR", 289, "https://img.freepik.com/psd-gratuitas/logo-mockup-luxury-bag_145275-414.jpg?size=626&ext=jpg&ga=GA1.2.843074877.1661354717");
 let p3 = new Produto(1003, "Bolsa Moderna", 329, "https://img.freepik.com/fotos-premium/bolsa-de-couro-moda-mulher_1339-103665.jpg?size=626&ext=jpg&ga=GA1.2.843074877.1661354717");
 let p4 = new Produto(1004, "Bolsa dia-a-dia ", 235, "https://img.freepik.com/fotos-gratis/linda-elegancia-e-bolsa-de-moda-feminina-de-luxo_74190-4899.jpg?size=626&ext=jpg&ga=GA1.2.843074877.1661354717");
@@ -37,18 +37,16 @@ let p13 = new Produto(1012, "Lenço Mockup Blue ", 49, "https://img.freepik.com/
 
 let produtos = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13]
 
-console.log(produtos)
 
 const PrivateRoutes = () => {
   console.log("private")
   return (
     <BrowserRouter>
       <NavBar />
-      <Header />
-       <Catalogo produtos={produtos}/> 
+      <Header />    
       <Routes>
+        <Route path="/catalogo" element= {<Catalogo produtos={produtos} />} />
         <Route path="/home" element={<Home/>} />
-        {/* <Route path='/catalogo' element={<Catalogo/>}/> */}
         <Route path="/" element={<Showcase />} />
         <Route path="/upload" element={<Upload/>} />
         <Route path="/login" element={<Login />} />

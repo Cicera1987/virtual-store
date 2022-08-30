@@ -26,3 +26,14 @@ export const ItemProdutos = styled.div`
     font-size: 18px;
     text-align: center;
 `
+
+export const ContaineItem = styled.div`
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    width: 95%;
+    padding: 0 20px;
+    margin-top: 5px;
+
+
+`

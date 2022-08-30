@@ -1,12 +1,16 @@
 import React from 'react'
-import { ContainerVitrine, ContainerProdutos, ItemProdutos } from './style'
+import { ContainerVitrine, ContainerProdutos, ContaineItem} from './style'
+import Catalogo from '../../molecules/Modal/ModalCreate/Catalogo'
 
 
-const Showcase = () => {
+const Showcase = (props) => {
+
 
   return (
     <ContainerVitrine>
-      <h1>ShowCase</h1>
+      <ContaineItem>
+        <h1>ShowCase</h1>
+      </ContaineItem>
     </ContainerVitrine>
   )
 }

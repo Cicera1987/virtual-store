@@ -5,6 +5,8 @@ import InputSearch from '../../../atoms/Inputs/InputSearch/InputSearch'
 import { ButtonLogin } from '../../../atoms/Buttons/ButtonLogin/style'
 import { useNavigate } from 'react-router-dom'
 
+
+
 const Catalogo = (props) => {
     const [search, setSearch] = useState("")
     const navigate = useNavigate();
@@ -13,7 +15,7 @@ const Catalogo = (props) => {
     let produtos = []
 
     for (let x = 0; x < props.produtos.length; x++) {
-      produtos.push(<Product produto={props.produtos[x]} />)
+      produtos.push(<Product key={produtos} produto={props.produtos[x]}/>)
 
    }
     const handleSubmit = async (e) => {

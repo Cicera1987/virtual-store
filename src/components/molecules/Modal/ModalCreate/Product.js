@@ -6,6 +6,8 @@ import { ContainerProduto,  ContainerVitrine } from './style'
 
 const Product = (props) => {
 
+  
+
   return (
     <ContainerVitrine>
       <ContainerProduto>
