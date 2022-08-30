@@ -3,6 +3,7 @@ import styled from "styled-components"
 export const StyleForm = styled.form`
     max-width: 40%;
     margin: 0 auto;
+    margin-top: 5px;
 `
 
 export const TitleTask = styled.div`
@@ -54,4 +55,22 @@ export const TitleLabel = styled.label`
     display: flex;
     flex-direction: column;
     margin-bottom: 1em;
+`
+export const StyleInput = styled.input`
+  height: 35px;
+  padding: 0 20px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  min-width: 80px
+
+`
+export const ContaineItemLi = styled.li`
+    box-shadow: 2px 2px 4px black;
+    overflow: hiden;
+    height: 550px;
+    width: 380px;
+    display: grid;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-top: 5px;
 `

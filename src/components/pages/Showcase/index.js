@@ -1,17 +1,22 @@
 import React from 'react'
-import { ContainerVitrine, ContainerProdutos, ContaineItem} from './style'
-import Catalogo from '../../molecules/Modal/ModalCreate/Catalogo'
+import {ContaineItem} from './style'
+import Upload from '../../molecules/Modal/ModalCard/Upload'
+import { ContainerProduto } from '../../molecules/Modal/ModalCreate/style'
 
 
-const Showcase = (props) => {
+const Showcase = (produtos) => {
 
 
   return (
-    <ContainerVitrine>
-      <ContaineItem>
-        <h1>ShowCase</h1>
+
+  <ContaineItem>
+      <ContainerProduto>
+          <Upload key={produtos} produtos={produtos} />
+      </ContainerProduto>    
       </ContaineItem>
-    </ContainerVitrine>
+
+
+ 
   )
 }
 
