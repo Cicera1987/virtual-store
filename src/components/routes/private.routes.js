@@ -12,13 +12,6 @@ import Upload from '../molecules/Modal/ModalCard/Upload'
 
 
 
-let store= {
-  nomeApp: "ShowCase",
-  autor: "Cicerar"
-};
-
-
-
 class Produto{
   constructor(id, name, price, img) {
     this.id = id;
@@ -52,12 +45,11 @@ const PrivateRoutes = () => {
     <BrowserRouter>
       <NavBar />
       <Header />
-      <Catalogo produtos={produtos}/>
-      {/* <Showcase nomeApp={store.nomeApp} /> */}
+       <Catalogo produtos={produtos}/> 
       <Routes>
-        {/* <Route path='/catalogo' element={<Catalogo/>}/>    */}
+        <Route path="/home" element={<Home/>} />
+        {/* <Route path='/catalogo' element={<Catalogo/>}/> */}
         <Route path="/" element={<Showcase />} />
-        <Route path="/home" element={<Home />} />
         <Route path="/upload" element={<Upload/>} />
         <Route path="/login" element={<Login />} />
       </Routes>

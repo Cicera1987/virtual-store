@@ -28,15 +28,7 @@ const Upload = (props) => {
         reader.addImag('load', () => {
             localStorage.setItem('recent-image', reader.result)
         })
-        reader.readAsDataURL(this.files[0])
-        const SalveImg = () => {
-            localStorage.getItem("recent-image")
-
-            if (SalveImg) {
-                return ("#imgPreview").setAttribute("src", SalveImg)
-            }
-        }
-    };
+    }
 
     return (
 

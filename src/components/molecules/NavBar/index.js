@@ -13,12 +13,13 @@ const NavBar = () => {
       </LinkListLi>
 
       <LinkListLi>
-        <StyleLink to="/catalogo">Catalogo</StyleLink>
+        <StyleLink to="/Product">Product</StyleLink>
       </LinkListLi>
 
       <LinkListLi>
-        <StyleLink to="/Product">Product</StyleLink>
+        <StyleLink to="/Catalogo">Catalogo</StyleLink>
       </LinkListLi>
+
       <LinkListLi>
         <StyleLink to="/upload">Upload</StyleLink>
       </LinkListLi>

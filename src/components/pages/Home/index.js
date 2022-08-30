@@ -2,6 +2,7 @@ import React from 'react'
 import AuthProvider from '../../context/AuthContext'
 import { ContainerProdutos } from '../Showcase/style';
 
+
 const Home = () => {
 
   return (

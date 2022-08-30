@@ -2,11 +2,11 @@ import React from 'react'
 import { ContainerVitrine, ContainerProdutos, ItemProdutos } from './style'
 
 
-const Showcase = (props) => {
+const Showcase = () => {
 
   return (
     <ContainerVitrine>
-  <p>Dados {props.nomeApp}</p>
+      <h1>ShowCase</h1>
     </ContainerVitrine>
   )
 }

@@ -27,3 +27,10 @@ export const ContainerProduto = styled.div`
     width: 400px
     
 `
+export const ContainerButton = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+`
