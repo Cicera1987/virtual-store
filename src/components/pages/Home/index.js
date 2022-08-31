@@ -19,7 +19,6 @@ const Home = () => {
       <ContainerHome >
           <ButtonLogin onClick={handleSubmit}>Catalogo</ButtonLogin>
       </ContainerHome>
-  
     </AuthProvider>
   )
 }

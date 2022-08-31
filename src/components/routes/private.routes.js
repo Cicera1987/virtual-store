@@ -9,8 +9,6 @@ import Showcase from '../pages/Showcase'
 import Catalogo from '../molecules/Modal/ModalCreate/Catalogo'
 
 
-
-
 const PrivateRoutes = () => {
 
   console.log("Private")

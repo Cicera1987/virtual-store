@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
 export const ContaineItem = styled.div`
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+    display: flex;
+    grid-template-columns: auto auto auto ;
     justify-content: space-between;
-    width: 100%;
-    padding: 0 5px;
-    margin-top: 5px;
-
+    max-width: 85%;
+    padding: 0 1em;
+    margin-top: 1em;
 
 `
 export const ContainerButton = styled.div`
@@ -18,20 +17,19 @@ export const ContainerButton = styled.div`
     width: 100%;
 `
 export const ContaineItemLi = styled.li`
-    box-shadow: 2px 2px 4px black;
-    overflow: hiden;
-    height: 550px;
-    width: 380px;
     display: grid;
     justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 2px 4px black;
+    overflow: hiden;
+    height: 580px;
+    width: 100%;
     padding: 0 5px;
     margin-top: 5px;
 `
-export const StyleForm = styled.form`
-    margin: 0 auto;
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+export const ContaineShowCase = styled.div`
+    display:flex;
+    flex-direction: column;
+    align-items:center;
 
 `
