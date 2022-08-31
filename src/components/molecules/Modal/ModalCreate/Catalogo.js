@@ -12,7 +12,7 @@ import Pagination from '../ModalCard/Pagination'
 const Catalogo = () => {
     const [search, setSearch] = useState("")
     const navigate = useNavigate();
-   
+
     class Produto {
         constructor(id, name, price, img) {
             this.id = id;
@@ -41,10 +41,10 @@ const Catalogo = () => {
 
     let produtos = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16]
 
- 
+
     const [itemsPage] = useState(4)
     const [currentPage, setCurrentPages] = useState(0)
-    const [setIProdutos] = useState([])
+    const [setItems] = useState([])
 
     const pages = Math.ceil(produtos.length / itemsPage)
     const startIndex = currentPage * itemsPage;
@@ -55,26 +55,27 @@ const Catalogo = () => {
 
 
     useEffect(() => {
-        let responseClone; 
+        let responseClone;
         const fetchData = async () => {
             const result = await fetch('produtos')
-                .then(function (response) {
-                    responseClone = response.clone(); 
-                    return response.json();
+                .then(function (res) {
+                    responseClone = res.clone();
+                    return res.json();
                 })
                 .then(function (data) {
-                }, function (rejectionReason) { 
-                    console.log('Error parsing JSON from response:', rejectionReason, responseClone); 
-                    responseClone.text() // 5
+                }, function (rejectionReason) {
+                    console.log('Erro ao analisar JSON da resposta:', rejectionReason, responseClone);
+                    responseClone.text()
                         .then(function (bodyText) {
-                            console.log('Received the following instead of valid JSON:', bodyText);
+                            console.log('Recebeu o texto ao em vez de um JSON válido:', bodyText);
                         });
                 });
+            window.localStorage.setItem("data", JSON.stringify(produtos))
 
-            setIProdutos(result)
+            setItems(result)
         }
         fetchData()
-    }, [setIProdutos])
+    }, [setItems])
 
 
     const handleSubmit = async (e) => {
@@ -83,11 +84,11 @@ const Catalogo = () => {
     }
     return (
         <>
-            <ContainerButton>    
-                <InputSearch search={search} setSearch={setSearch}/>    
-                <ButtonLogin onClick={handleSubmit}>Sair</ButtonLogin> 
+            <ContainerButton>
+                <InputSearch search={search} setSearch={setSearch} />
+                <ButtonLogin onClick={handleSubmit}>Sair</ButtonLogin>
             </ContainerButton>
-            <Pagination pages={pages} setCurrentPages={setCurrentPages} currentPage={currentPage}/>
+            <Pagination pages={pages} setCurrentPages={setCurrentPages} currentPage={currentPage} />
             <ContaineItem>
                 {currentItens.map(produto => {
                     return <ContaineItemLi key={produto.name}>
@@ -102,7 +103,7 @@ const Catalogo = () => {
                     </ContaineItemLi>
                 })}
             </ContaineItem>
-            
+
 
         </>
     )
