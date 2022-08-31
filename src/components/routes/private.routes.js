@@ -11,7 +11,6 @@ import Catalogo from '../molecules/Modal/ModalCreate/Catalogo'
 
 const PrivateRoutes = () => {
 
-  console.log("Private")
 
   return (
     <BrowserRouter>

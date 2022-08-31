@@ -11,8 +11,6 @@ const CartProvider = ({ children }) => {
 
     const item = copyProdutCart.find((product) =>product.id ===id)
 
-    console.log(item)
-
    }
 
   function removeProductCart(id) { }
