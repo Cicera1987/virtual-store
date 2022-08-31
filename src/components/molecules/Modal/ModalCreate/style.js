@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const ContaineItem = styled.div`
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     justify-content: space-between;
-    width: 95%;
-    padding: 0 20px;
+    width: 100%;
+    padding: 0 5px;
     margin-top: 5px;
 
 
@@ -33,4 +33,14 @@ export const ContainerButton = styled.div`
     justify-content: space-around;
     align-items: center;
     width: 100%;
+`
+export const ContaineItemLi = styled.li`
+    box-shadow: 2px 2px 4px black;
+    overflow: hiden;
+    height: 550px;
+    width: 380px;
+    display: grid;
+    justify-content: space-between;
+    padding: 0 5px;
+    margin-top: 5px;
 `

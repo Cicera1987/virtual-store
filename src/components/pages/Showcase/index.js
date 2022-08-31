@@ -1,22 +1,17 @@
 import React from 'react'
-import {ContaineItem} from './style'
-import Upload from '../../molecules/Modal/ModalCard/Upload'
-import { ContainerProduto } from '../../molecules/Modal/ModalCreate/style'
+import { ContaineItem, ItemProdutos } from './style'
+import Catalogo from '../../molecules/Modal/ModalCreate/Catalogo'
 
 
 const Showcase = (produtos) => {
 
 
   return (
-
-  <ContaineItem>
-      <ContainerProduto>
-          <Upload key={produtos} produtos={produtos} />
-      </ContainerProduto>    
-      </ContaineItem>
-
-
- 
+    <ContaineItem>
+      <ItemProdutos>
+        <Catalogo key={produtos} produtos={produtos} />
+      </ItemProdutos>
+    </ContaineItem>
   )
 }
 

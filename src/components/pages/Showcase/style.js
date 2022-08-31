@@ -1,13 +1,12 @@
 import styled from "styled-components"
 
 export const ContainerVitrine = styled.div`
-    height: 600px;
+    height: 300px;
     width:100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    margin-bottom: 1em;
+    margin: 40px;
 `
 
 export const ContainerProdutos = styled.div`
@@ -19,20 +18,19 @@ export const ContainerProdutos = styled.div`
     padding: 0 20px;
 `
 export const ItemProdutos = styled.div`
-    background-color: #efefef;
-    width: 250px;
-    border-radius: 10px;
-    padding: 10px;
-    font-size: 18px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-between;
 `
 
 export const ContaineItem = styled.div`
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: space-between;
-    width: 95%;
-    padding: 0 20px;
+    width: 100%;
+    padding: 0 30px;
+    margin: 40px;
     margin-top: 5px;
 
 

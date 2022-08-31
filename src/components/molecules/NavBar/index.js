@@ -7,15 +7,9 @@ const NavBar = () => {
   return <PageNavbar>
     <StyleLink to="/">Show Case</StyleLink>
     <LinkList>
-    
       <LinkListLi>
         <StyleLink to="/home">Home</StyleLink>
       </LinkListLi>
-
-      <LinkListLi>
-        <StyleLink to="/upload">Upload</StyleLink>
-      </LinkListLi>
-
       <LinkListLi>
         <CardIcon>
           <StyleLink to="/login"><VscGear /></StyleLink>

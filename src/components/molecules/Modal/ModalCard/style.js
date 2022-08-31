@@ -5,7 +5,6 @@ export const StyleForm = styled.form`
     margin: 0 auto;
     margin-top: 5px;
 `
-
 export const TitleTask = styled.div`
     display:flex;
     flex-direction: column;
@@ -16,7 +15,6 @@ export const TitleTask = styled.div`
     height:20px;
     width: 100%;
 `
-
 export const ModalTask = styled.div`
     display:flex;
     flex-direction: column;
