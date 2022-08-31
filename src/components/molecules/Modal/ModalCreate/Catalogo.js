@@ -97,10 +97,8 @@ const Catalogo = () => {
                                 </span>
                                 <span>
                                     <button onClick={() => (product.removeCart)}> - </button>
-                                    </span>
+                                </span>
                                 </p>
-                                
-                            
                             </ContaineItemLi>
                         }) : filteredProduct.map(product => {
                             return <ContaineItemLi key={product.name}>
