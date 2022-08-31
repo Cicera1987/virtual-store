@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-use-before-define */
 import React, { useState, useEffect } from 'react'
 import { ContaineItem, ContainerButton, ContaineItemLi } from './style'
@@ -39,6 +40,7 @@ const Catalogo = () => {
     let p15 = new Produto(1015, "carteira feminina", 129, "https://t3.ftcdn.net/jpg/02/48/72/46/240_F_248724638_CmVOwxQz3VBwlp24cgYEIcLuD4CVZ9tb.jpg");
     let p16 = new Produto(1016, "Necessaire", 49, "https://img.freepik.com/psd-gratuitas/maquete-de-bolsas-para-mulheres_1332-16345.jpg?size=626&ext=jpg&ga=GA1.2.843074877.1661354717");
 
+ 
     let produtos = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16]
 
 
@@ -75,10 +77,10 @@ const Catalogo = () => {
             setItems(result)
         }
         fetchData()
-    }, [setItems])
+    }, [produtos, setItems])
 
 
-    const handleSubmit = async (e) => {
+    async function handleSubmit(e) {
         e.preventDefault()
         navigate("/")
     }
