@@ -10,23 +10,6 @@ export const ContaineItem = styled.div`
 
 
 `
-export const ContainerVitrine = styled.div`
-    width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    padding : 2em;
-    font-size: 18px;
-    
-
-`
-
-export const ContainerProduto = styled.div`
-    box-shadow: 2px 2px 4px black;
-    overflow: hiden;
-    height: 540px;
-    width: 400px
-    
-`
 export const ContainerButton = styled.div`
     display: flex;
     flex-direction: row;
@@ -43,4 +26,12 @@ export const ContaineItemLi = styled.li`
     justify-content: space-between;
     padding: 0 5px;
     margin-top: 5px;
+`
+export const StyleForm = styled.form`
+    margin: 0 auto;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 `

@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import AuthProvider from '../../context/AuthContext'
 import { ContainerHome } from './style';
 import { ButtonLogin } from '../../atoms/Buttons/ButtonLogin/style';
+import { ContaineItem } from '../Showcase/style';
+import { StyleForm } from '../../molecules/Modal/ModalCard/style';
 
 
 const Home = () => {
@@ -19,6 +21,7 @@ const Home = () => {
       <ContainerHome >
           <ButtonLogin onClick={handleSubmit}>Catalogo</ButtonLogin>
       </ContainerHome>
+  
     </AuthProvider>
   )
 }

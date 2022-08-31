@@ -7,7 +7,7 @@ import Header from '../organisms/Header'
 import Footer from '../organisms/Footer'
 import Showcase from '../pages/Showcase'
 import Catalogo from '../molecules/Modal/ModalCreate/Catalogo'
-import Upload from '../molecules/Modal/ModalCard/Upload'
+
 
 
 
@@ -23,7 +23,6 @@ const PrivateRoutes = () => {
         <Route path="/" element={<Showcase />} />
         <Route path="/home" element={<Home />} />
         <Route path="/catalogo" element={<Catalogo />} />
-        <Route path="/upload" element={<Upload />} />
         <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
