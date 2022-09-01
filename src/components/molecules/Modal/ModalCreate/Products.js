@@ -1,6 +1,6 @@
 
 
-const products = [
+const listproducts = [
     {
         id: 1,
         codigo: 1001,
@@ -138,4 +138,4 @@ const products = [
     },
 ];
 
-export default products
+export default listproducts
