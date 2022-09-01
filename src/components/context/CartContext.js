@@ -1,8 +1,8 @@
 
 import { createContext, useState } from 'react'
-import Catalogo from '../ModalCreate/Catalogo';
+import Catalogo from '../molecules/Modal/ModalCreate/Catalogo';
 
-export const CartContex = createContext();
+export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   const [productCart, setProductCart] = useState([])
@@ -18,10 +18,10 @@ const CartProvider = ({ children }) => {
 
 
   return (
-    <CartContex.Provider
+    <CartContext.Provider
       value={{ productCart, setProductCart,addProductCart, removeProductCart }}>
       <Catalogo/>
-    </CartContex.Provider>
+    </CartContext.Provider>
   )
 }
 

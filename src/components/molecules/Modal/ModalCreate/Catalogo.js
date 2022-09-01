@@ -7,6 +7,7 @@ import { ButtonLogin } from '../../../atoms/Buttons/ButtonLogin/style'
 import { useNavigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import Pagination from '../ModalPagination/Pagination'
+import { CartContext } from '../../../context/CartContext'
 
 
 

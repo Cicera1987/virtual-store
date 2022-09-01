@@ -7,6 +7,7 @@ import Header from '../organisms/Header'
 import Footer from '../organisms/Footer'
 import Showcase from '../pages/Showcase'
 import Catalogo from '../molecules/Modal/ModalCreate/Catalogo'
+import Cart from '../pages/Cart'
 
 
 const PrivateRoutes = () => {
@@ -18,6 +19,7 @@ const PrivateRoutes = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Showcase />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="/home" element={<Home />} />
         <Route path="/catalogo" element={<Catalogo />} />
         <Route path="/login" element={<Login />} />

@@ -8,6 +8,9 @@ const NavBar = () => {
     <StyleLink to="/">Show Case</StyleLink>
     <LinkList>
       <LinkListLi>
+        <StyleLink to="/cart">Cart</StyleLink>
+      </LinkListLi>
+      <LinkListLi>
         <StyleLink to="/home">Home</StyleLink>
       </LinkListLi>
       <LinkListLi>
