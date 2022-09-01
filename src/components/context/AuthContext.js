@@ -54,7 +54,7 @@ export const AuthProvider = ({ children }) => {
         else {
             setAuth(false)
         }
-    }, [])
+    }, [token])
 
     return (
         <AuthContext.Provider 
