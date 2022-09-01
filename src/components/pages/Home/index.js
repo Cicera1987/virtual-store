@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import AuthProvider from '../../context/AuthContext'
-import { ContainerHome, ContainerButtonHome } from './style';
-import { Modal } from '../../atoms/Modal';
+import { ContainerButtonHome } from './style';
 import { ButtonLogin } from '../../atoms/Buttons/ButtonLogin/style';
 
 

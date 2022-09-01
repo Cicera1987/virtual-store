@@ -1,15 +1,18 @@
 import React from 'react'
 import { VscGear } from "react-icons/vsc";
 import { PageNavbar, LinkList, LinkListLi, StyleLink, CardIcon } from './style'
+import { BsFillHandbagFill } from "react-icons/bs";
 
 const NavBar = () => {
 
   return <PageNavbar>
-    <StyleLink to="/">Show Case</StyleLink>
+    <StyleLink to="/"></StyleLink>
     <LinkList>
-      <LinkListLi>
-        <StyleLink to="/home">Home</StyleLink>
-      </LinkListLi>
+    <LinkListLi>
+        <CardIcon>
+        <StyleLink to="/"><BsFillHandbagFill /></StyleLink>
+        </CardIcon>
+    </LinkListLi>
       <LinkListLi>
         <CardIcon>
           <StyleLink to="/login"><VscGear /></StyleLink>

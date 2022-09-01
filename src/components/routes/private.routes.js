@@ -20,7 +20,6 @@ const PrivateRoutes = () => {
       <Routes>
         <Route path="/" element={<Showcase />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/home" element={<Home />} />
         <Route path="/catalogo" element={<Catalogo />} />
         <Route path="/login" element={<Login />} />
       </Routes>

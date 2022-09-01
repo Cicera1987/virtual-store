@@ -26,7 +26,7 @@ const Login = () => {
     setUsers(users)
     if (form.email === 'ccica_25@hotmail.com' && form.password === '123') {
       setAuth(true)
-      navigate("/home");
+      navigate("/");
       window.alert('logado com sucesso')
     }
     else {

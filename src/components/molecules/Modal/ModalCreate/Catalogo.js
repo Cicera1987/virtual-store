@@ -4,20 +4,16 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { ContaineItem, ContainerButton, ContaineItemLi, ContaineShowCase, ContainerIcon } from './style'
 import InputSearch from '../../../atoms/Inputs/InputSearch/InputSearch'
-import { ButtonLogin } from '../../../atoms/Buttons/ButtonLogin/style'
-import { useNavigate } from 'react-router-dom'
 import Pagination from '../ModalPagination/Pagination'
 import listproducts from './Products'
 import { AuthContext } from '../../../context/AuthContext'
 import { BsBasket2, BsCart4, BsTrash } from "react-icons/bs";
 import { StyleLink } from '../../NavBar/style'
-import { CartList } from '../../../pages/Cart/style'
 
 
 
 const Catalogo = () => {
     const [search, setSearch] = useState("")
-    const navigate = useNavigate();
     const [itemsPage] = useState(4)
     const [currentPage, setCurrentPages] = useState(0)
     const [products, setProducts] = useState(listproducts)
@@ -41,10 +37,6 @@ const Catalogo = () => {
         fetchData()
     }, [setProducts])
 
-    async function handleSubmit(e) {
-        e.preventDefault()
-        navigate("/")
-    }
 
     const filteredProduct = search.length > 0 ?
         products.filter((obj) =>
@@ -53,7 +45,6 @@ const Catalogo = () => {
         <>
             <ContainerButton>
                 <InputSearch search={search} setSearch={setSearch} />
-                <ButtonLogin onClick={handleSubmit}>Sair</ButtonLogin>
                 <ContainerIcon>
                     <StyleLink to="/cart"><BsCart4 /></StyleLink>
                 </ContainerIcon>
@@ -61,10 +52,11 @@ const Catalogo = () => {
             </ContainerButton>
             <Pagination pages={pages} setCurrentPages={setCurrentPages} currentPage={currentPage} />
             <ContaineShowCase>
-                <CartList>
-                    <a onClick={clearCart}>Limpar o carrinho</a>
-                    {JSON.stringify(productCart)}
-                </CartList>
+                <ContainerIcon>  
+                    <p onClick={clearCart}> <BsTrash />Limpar...</p> 
+                <p><BsCart4 />{JSON.stringify(productCart)}</p>
+                </ContainerIcon>
+
                 <ContaineItem>
                     {!search.length > 0
                         ? currentItens && currentItens.map(product => {
@@ -76,7 +68,7 @@ const Catalogo = () => {
                                     ? productCart.find((item) => item.id === product.id)?.qtd
                                     : 0}
                                 </h3>
-                                <h2>{product.price},00</h2>
+                                <h2>R$ {product.price},00</h2>
                                 <ContainerIcon>
                                     <a onClick={() => addProductCart(product.id)}><BsBasket2 /></a>
                                     <a onClick={() => removeProductCart(product.id)}><BsTrash /> </a>
@@ -91,7 +83,7 @@ const Catalogo = () => {
                                     ? productCart.find((item) => item.id === product.id)?.qtd
                                     : 0}
                                 </h3>
-                                <p>{product.price}</p>
+                                <p>R$ {product.price}</p>
                                 <ContainerIcon>
                                     <a onClick={() => addProductCart(product.id)}><BsBasket2 /></a>
                                     <a onClick={() => removeProductCart(product.id)}> <BsTrash /> </a>

@@ -91,17 +91,17 @@ const listproducts = [
     {
         id:12 ,
         codigo:1011 ,
-        name: "Lenço Mockup",
+        name: " Kit 3 Lenços Mockup",
         img: "https://img.freepik.com/psd-gratuitas/maquete-de-lencos-pequenos-02_1332-20138.jpg?size=626&ext=jpg&ga=GA1.2.843074877.1661354717",
-        price:49 ,
+        price:189 ,
 
     },
     {
         id: 13,
         codigo: 1012,
-        name: "Kit 3 Lenços Mochup",
+        name: "Lenço Mochup",
         img: "https://img.freepik.com/psd-gratuitas/modelo-de-lenco-de-la-close-up_1332-14592.jpg?size=338&ext=jpg&ga=GA1.2.843074877.1661354717",
-        price: 189 ,
+        price: 49 ,
 
     },
     {
@@ -115,7 +115,7 @@ const listproducts = [
     {
         id: 15,
         codigo: 1014,
-        name: "Boné Logo",
+        name: "Bolsa Blue",
         img: "https://t3.ftcdn.net/jpg/02/48/72/46/240_F_248724638_CmVOwxQz3VBwlp24cgYEIcLuD4CVZ9tb.jpg",
         price: 99,
 
