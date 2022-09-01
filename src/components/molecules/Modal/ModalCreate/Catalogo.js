@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-use-before-define */
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { ContaineItem, ContainerButton, ContaineItemLi, ContaineShowCase } from './style'
 import InputSearch from '../../../atoms/Inputs/InputSearch/InputSearch'
 import { ButtonLogin } from '../../../atoms/Buttons/ButtonLogin/style'
@@ -45,7 +45,7 @@ const Catalogo = () => {
 
     let products = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16]
 
-
+    // const { productCart, setProductCart } = useContext()
     const [itemsPage] = useState(4)
     const [currentPage, setCurrentPages] = useState(0)
     const [setProducts] = useState([])

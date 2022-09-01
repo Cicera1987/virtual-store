@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import AuthProvider from '../../context/AuthContext'
-import { ContainerHome } from './style';
+import { ContainerHome, ContainerButtonHome } from './style';
+import { Modal } from '../../atoms/Modal';
 import { ButtonLogin } from '../../atoms/Buttons/ButtonLogin/style';
 
 
 const Home = () => {
 
   const navigate = useNavigate();
+  const [openModal, setOpenModal] = useState(true);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -16,8 +19,12 @@ const Home = () => {
 
   return (
     <AuthProvider>
+      <ContainerButtonHome >
+        <ButtonLogin onClick={handleSubmit}>Catalogo</ButtonLogin>
+      </ContainerButtonHome > 
       <ContainerHome >
-          <ButtonLogin onClick={handleSubmit}>Catalogo</ButtonLogin>
+      {openModal && <Modal/>}
+      <ButtonLogin onChange={() => setOpenModal(prev => !prev)}>Enviar</ButtonLogin>
       </ContainerHome>
     </AuthProvider>
   )

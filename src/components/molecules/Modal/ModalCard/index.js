@@ -1,10 +1,11 @@
 
 import { createContext, useState } from 'react'
+import Catalogo from '../ModalCreate/Catalogo';
 
 export const CartContex = createContext();
 
 const CartProvider = ({ children }) => {
-  const [productCart, setProductCart] = useState([{id:1, qtd:1}])
+  const [productCart, setProductCart] = useState([])
 
   function addProductCart(id) {
     const copyProdutCart = [...productCart];
@@ -18,9 +19,8 @@ const CartProvider = ({ children }) => {
 
   return (
     <CartContex.Provider
-      value={{ productCart, addProductCart, removeProductCart }}>
-
-      {children}
+      value={{ productCart, setProductCart,addProductCart, removeProductCart }}>
+      <Catalogo/>
     </CartContex.Provider>
   )
 }
