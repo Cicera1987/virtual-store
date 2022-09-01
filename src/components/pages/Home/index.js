@@ -7,9 +7,7 @@ import { ButtonLogin } from '../../atoms/Buttons/ButtonLogin/style';
 
 
 const Home = () => {
-
   const navigate = useNavigate();
-  const [openModal, setOpenModal] = useState(true);
 
 
   const handleSubmit = async (e) => {
@@ -22,10 +20,6 @@ const Home = () => {
       <ContainerButtonHome >
         <ButtonLogin onClick={handleSubmit}>Catalogo</ButtonLogin>
       </ContainerButtonHome > 
-      <ContainerHome >
-      {openModal && <Modal/>}
-      <ButtonLogin onChange={() => setOpenModal(prev => !prev)}>Enviar</ButtonLogin>
-      </ContainerHome>
     </AuthProvider>
   )
 }

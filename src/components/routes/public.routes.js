@@ -5,6 +5,7 @@ import Login from '../pages/Login'
 import NavBar from '../molecules/NavBar'
 import Header from '../organisms/Header'
 import Footer from '../organisms/Footer'
+import Cart from '../pages/Cart'
 
 const PublicRoutes = () => {
 
@@ -14,6 +15,7 @@ const PublicRoutes = () => {
             <Header />
             <Routes>
                 <Route path="/" element={<Showcase />} />
+                <Route path="/cart" element={<Cart />} />
                 <Route path="/login" element={<Login/>} />   
             </Routes>
             <Footer />

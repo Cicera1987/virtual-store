@@ -32,3 +32,14 @@ export const ContaineShowCase = styled.div`
     align-items:center;
 
 `
+export const ContainerIcon = styled.div`
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items:flex-end;
+    color:#556B2F;
+    cursor: pointer;
+    font-size: 1.5em;
+    padding: 0  1em  0 0;
+
+`

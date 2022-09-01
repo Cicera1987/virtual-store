@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 import React, { createContext, useEffect, useState } from "react";
 
 
@@ -9,23 +10,25 @@ export const AuthProvider = ({ children }) => {
     const [productCart, setProductCart] = useState([])
 
     function addProductCart(id) {
-        const copyProductCart = [...productCart];
-
+        const copyProductCart = [...productCart]
+        localStorage.setItem("Carrinho", JSON.stringify(productCart))
         const item = copyProductCart.find((product) => product.id === id)
-        if (!item) {
+        JSON.parse(localStorage.getItem('Carrinho', productCart))
+        if (!productCart) return;
+        setProductCart({ productCart })
+        
+        if (!item) {  
             copyProductCart.push({ id: id, qtd: 1 });
         } else {
             item.qtd = item.qtd + 1;
         }
-
         setProductCart(copyProductCart);
     }
 
-
     function removeProductCart(id) {
         const copyProductCart = [...productCart];
+        localStorage.removeItem('Carrinho', JSON.stringify(productCart));    
         const item = copyProductCart.find((product) => product.id === id);
-
 
         if (item && item.qtd > 1) {
             item.qtd = item.qtd - 1;
@@ -34,6 +37,7 @@ export const AuthProvider = ({ children }) => {
             const arrayFiltered = copyProductCart.filter(
                 (product) => product.id !== id
             );
+           
             setProductCart(arrayFiltered);
         }
     }
