@@ -6,19 +6,41 @@ export const AuthContext = createContext({});
 export const AuthProvider = ({ children }) => {
     const [auth, setAuth] = useState(false)
     const token = localStorage.getItem("users") || null
-    const [productsCard, setProductsCard] = useState([{id:1, qtd:1}])
+    const [productCart, setProductCart] = useState([])
 
-    function addProducToCard(id){
-        const copyPoductsCard = [...productsCard]
+    function addProductCart(id) {
+        const copyProductCart = [...productCart];
 
-        const  item = copyPoductsCard.find((product) => product.id ===id)
+        const item = copyProductCart.find((product) => product.id === id)
+        if (!item) {
+            copyProductCart.push({ id: id, qtd: 1 });
+        } else {
+            item.qtd = item.qtd + 1;
+        }
 
+        setProductCart(copyProductCart);
     }
 
-    function removeProducToCard(id) {
 
+    function removeProductCart(id) {
+        const copyProductCart = [...productCart];
+        const item = copyProductCart.find((product) => product.id === id);
+
+
+        if (item && item.qtd > 1) {
+            item.qtd = item.qtd - 1;
+            setProductCart(copyProductCart);
+        } else {
+            const arrayFiltered = copyProductCart.filter(
+                (product) => product.id !== id
+            );
+            setProductCart(arrayFiltered);
+        }
     }
 
+    function clearCart() {
+        setProductCart([]);
+    }
 
 
     useEffect(() => {
@@ -32,7 +54,7 @@ export const AuthProvider = ({ children }) => {
 
     return (
         <AuthContext.Provider 
-        value={{ auth, setAuth }}>
+            value={{ auth, setAuth, productCart, addProductCart, removeProductCart, clearCart }}>
             {children}
         </AuthContext.Provider>
     );

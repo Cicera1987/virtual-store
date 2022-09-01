@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-use-before-define */
 import React, { useState, useEffect, useContext } from 'react'
@@ -7,16 +8,18 @@ import { ButtonLogin } from '../../../atoms/Buttons/ButtonLogin/style'
 import { useNavigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import Pagination from '../ModalPagination/Pagination'
-import { CartContext } from '../../../context/CartContext'
 import listproducts from './Products'
+import { AuthContext } from '../../../context/AuthContext'
+import { BsBasket2, BsCart4, BsTrash } from "react-icons/bs";
+import { StyleLink } from '../../NavBar/style'
+import { CartList, CartStyle } from '../../../pages/Cart/style'
+
 
 
 
 const Catalogo = () => {
     const [search, setSearch] = useState("")
     const navigate = useNavigate();
-    
-    // const { productCart, setProductCart } = useContext()
     const [itemsPage] = useState(4)
     const [currentPage, setCurrentPages] = useState(0)
     const [products, setProducts] = useState(listproducts)
@@ -26,6 +29,12 @@ const Catalogo = () => {
     const endIndex = startIndex + itemsPage;
     const currentItens = products.slice(startIndex, endIndex)
 
+    const {
+        productCart = [listproducts],
+        addProductCart,
+        removeProductCart,
+        clearCart
+    } = useContext(AuthContext);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -47,38 +56,54 @@ const Catalogo = () => {
             <ContainerButton>
                 <InputSearch search={search} setSearch={setSearch} />
                 <ButtonLogin onClick={handleSubmit}>Sair</ButtonLogin>
+                <StyleLink to="/cart"><BsCart4 /></StyleLink>
             </ContainerButton>
             <Pagination pages={pages} setCurrentPages={setCurrentPages} currentPage={currentPage} />
             <ContaineShowCase>
+
+                    <CartList>
+                    <a onClick={clearCart}>Limpar o carrinho</a>
+                    {JSON.stringify(productCart)}
+                    </CartList>
+
+              
+               
+
                 <ContaineItem>
                     {!search.length > 0
                         ? currentItens && currentItens.map(product => {
                             return <ContaineItemLi key={product.name}>
                                 <img width="100%" height="380px" src={product.img} alt="produto" />
-                                <p>{product.name}</p>
-                                <p>{product.id}</p>
-                                <p>{product.price},00</p>
-                                <p>
+                                <h3>{product.name}</h3>
+                                <h3>Codigo:{product.codigo}</h3>
+                                <h3>{productCart.find((item) => item.id === product.id)?.qtd
+                                    ? productCart.find((item) => item.id === product.id)?.qtd
+                                    : 0}
+                                </h3>
+                                <h2>{product.price},00</h2>
                                 <span>
-                                    <button onClick={() => (product.addCart)}> + </button>
+                                    <a onClick={() => addProductCart(product.id)}><BsBasket2 /></a>
+                                    <a onClick={() => removeProductCart(product.id)}><BsTrash /> </a>
                                 </span>
-                                <span>
-                                    <button onClick={() => (product.removeCart)}> - </button>
-                                </span>
-                                </p>
+
                             </ContaineItemLi>
                         }) : filteredProduct.map(product => {
                             return <ContaineItemLi key={product.name}>
                                 <img width="100%" height="380px" src={product.img} alt="produto" />
-                                <p>{product.name}</p>
-                                <p>{product.id}</p>
+                                <h3>{product.name}</h3>
+                                <h3>{product.codigo}</h3>
+                                <h3>{productCart.find((item) => item.id === product.id)?.qtd
+                                    ? productCart.find((item) => item.id === product.id)?.qtd
+                                    : 0}
+                                </h3>
                                 <p>{product.price}</p>
-                                <p>
-                                    <span>{product.addCart}</span>
-                                    <span>{product.removeCart}</span>
-                                </p>
+                                <span>
+                                    <a onClick={() => addProductCart(product.id)}><BsBasket2/></a>
+                                    <a onClick={() => removeProductCart(product.id)}> <BsTrash /> </a>
+                                </span>
                             </ContaineItemLi>
                         })}
+                    
                 </ContaineItem>
             </ContaineShowCase>
         </>
@@ -86,7 +111,7 @@ const Catalogo = () => {
 
 }
 Catalogo.propType = {
-    produtos: PropTypes.array.isRequired
+    products: PropTypes.array.isRequired
 }
 
 export default Catalogo

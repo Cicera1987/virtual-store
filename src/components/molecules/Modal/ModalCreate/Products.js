@@ -67,7 +67,7 @@ const listproducts = [
     {
         id:9 ,
         codigo: 1017,
-        name: "Carteira masculina",
+        name: "Necessaire masculina",
         img: "https://img.freepik.com/psd-gratuitas/maquete-de-bolsa-masculina-de-couro_1332-15345.jpg?size=626&ext=jpg&ga=GA1.2.843074877.1661354717",
         price:89,
 
