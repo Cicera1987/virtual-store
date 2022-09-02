@@ -1,4 +1,6 @@
 /* eslint-disable no-use-before-define */
+import { toContainHTML } from "@testing-library/jest-dom/dist/matchers";
+import { func } from "prop-types";
 import React, { createContext, useEffect, useState } from "react";
 
 
@@ -8,39 +10,45 @@ export const AuthProvider = ({ children }) => {
     const [auth, setAuth] = useState(false)
     const token = localStorage.getItem("users") || null
     const [productCart, setProductCart] = useState([])
-    console.log(productCart)
+    
 
-    function addProductCart(id,name, price, valor) {
+
+
+    function addProductCart(id, name, price) {
         const copyProductCart = [...productCart]
         const item = copyProductCart.find((product) => product.id === id)
         JSON.parse(localStorage.getItem('Carrinho', productCart))
         if (!productCart) return;
         setProductCart({ productCart })
-        
-        if (!item) {  
+
+        if (!item) {
             copyProductCart.push({ id: id, name: name, price: price.toFixed(2), qtd: 1 });
-        } else {
+        
+        }else {
             item.qtd = item.qtd + 1;
         }
+
         setProductCart(copyProductCart);
     }
 
+
     function removeProductCart(id) {
-        const copyProductCart = [...productCart];  
+        const copyProductCart = [...productCart];
         const item = copyProductCart.find((product) => product.id === id);
 
         if (item && item.qtd > 1) {
             item.qtd = item.qtd - 1;
             setProductCart(copyProductCart);
-        } else {
+        } else  {
             const arrayFiltered = copyProductCart.filter(
                 (product) => product.id !== id
             );
-           
+
             setProductCart(arrayFiltered);
 
         }
     }
+
 
     function clearCart() {
         setProductCart([]);
@@ -59,7 +67,7 @@ export const AuthProvider = ({ children }) => {
     }, [token, productCart])
 
     return (
-        <AuthContext.Provider 
+        <AuthContext.Provider
             value={{ auth, setAuth, productCart, addProductCart, removeProductCart, clearCart }}>
             {children}
         </AuthContext.Provider>

@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const CartList = styled.div`
   border: 1px solid #556B2F;
   height: 400px;
-  width: 40%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
