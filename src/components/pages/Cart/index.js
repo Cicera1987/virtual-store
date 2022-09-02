@@ -5,8 +5,7 @@ import { BsTrash } from "react-icons/bs";
 import { ContainerIcon } from '../../molecules/Modal/ModalCreate/style';
 
 const Cart = () => {
-  const { productCart } = useContext(AuthContext);
-  const { clearCart, } = useContext(AuthContext);
+  const { productCart, clearCart } = useContext(AuthContext);
 
   return (
     <CartStyle >

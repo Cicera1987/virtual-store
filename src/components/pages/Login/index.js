@@ -8,10 +8,7 @@ import { AuthContext } from "../../context/AuthContext";
 const Login = () => {
   const [form, setForm] = useState('')
   const [users, setUsers] = useState()
-
-
   const { setAuth, auth } = useContext(AuthContext)
-
   const navigate = useNavigate();
 
   function handleChange(event) {

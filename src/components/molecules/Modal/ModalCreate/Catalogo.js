@@ -83,10 +83,12 @@ const Catalogo = () => {
                                     </h3>
                                     <h2>R$ {product.price.toFixed(2)}</h2>
                                 </Containerdescrition>
+
                                 <ContainerIcon>
                                     <a onClick={() => addProductCart(product.id, product.name, product.price)}><BsBasket2 /></a>
                                     <a onClick={() => removeProductCart(product.id, product.name, product.price)}> <BsTrash /> </a>
                                 </ContainerIcon>
+                                
                             </ContaineItemLi>
                         })}
 
