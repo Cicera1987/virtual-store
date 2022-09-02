@@ -2,7 +2,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-use-before-define */
 import React, { useState, useEffect, useContext } from 'react'
-import { ContaineItem, ContainerButton, ContaineItemLi, ContaineShowCase, ContainerIcon } from './style'
+import { ContaineItem, ContainerButton, ContaineItemLi, ContaineShowCase, ContainerIcon, Containerdescrition } from './style'
 import InputSearch from '../../../atoms/Inputs/InputSearch/InputSearch'
 import Pagination from '../ModalPagination/Pagination'
 import listproducts from './Products'
@@ -27,7 +27,6 @@ const Catalogo = () => {
         productCart = [listproducts],
         addProductCart,
         removeProductCart,
-        clearCart
     } = useContext(AuthContext);
 
     useEffect(() => {
@@ -52,41 +51,43 @@ const Catalogo = () => {
             </ContainerButton>
             <Pagination pages={pages} setCurrentPages={setCurrentPages} currentPage={currentPage} />
             <ContaineShowCase>
-                <ContainerIcon>  
-                    <p onClick={clearCart}> <BsTrash />Limpar...</p> 
-                <p><BsCart4 />{JSON.stringify(productCart)}</p>
-                </ContainerIcon>
 
-                <ContaineItem>
+             <ContaineItem>
                     {!search.length > 0
                         ? currentItens && currentItens.map(product => {
                             return <ContaineItemLi key={product.name}>
                                 <img width="100%" height="380px" src={product.img} alt="produto" />
-                                <h3>{product.name}</h3>
-                                <h3>Codigo: {product.codigo}</h3>
-                                <h3>Itens no Carrinho: {productCart.find((item) => item.id === product.id)?.qtd
-                                    ? productCart.find((item) => item.id === product.id)?.qtd
-                                    : 0}
-                                </h3>
-                                <h2>R$ {product.price},00</h2>
+                                <Containerdescrition>
+                                    <h3>{product.name}</h3>
+                                    <h3>Codigo: {product.codigo}</h3>
+                                    <h3>Itens no carrinho: {productCart.find((item) => item.id === product.id)?.qtd
+                                        ? productCart.find((item) => item.id === product.id)?.qtd
+                                        : 0}
+                                    </h3>
+                                    <h2>R$ {product.price.toFixed(2)}</h2>
+                                </Containerdescrition>
+
                                 <ContainerIcon>
-                                    <a onClick={() => addProductCart(product.id)}><BsBasket2 /></a>
-                                    <a onClick={() => removeProductCart(product.id)}><BsTrash /> </a>
+                                    <a onClick={() => addProductCart(product.id, product.name, product.price)}><BsBasket2 /></a>
+                                    <a onClick={() => removeProductCart(product.id, product.name, product.price)}><BsTrash /> </a>
                                 </ContainerIcon>
+
                             </ContaineItemLi>
                         }) : filteredProduct.map(product => {
                             return <ContaineItemLi key={product.name}>
                                 <img width="100%" height="380px" src={product.img} alt="produto" />
-                                <h3>{product.name}</h3>
-                                <h3>Codigo: {product.codigo}</h3>
-                                <h3>id: {productCart.find((item) => item.id === product.id)?.qtd
-                                    ? productCart.find((item) => item.id === product.id)?.qtd
-                                    : 0}
-                                </h3>
-                                <p>R$ {product.price}</p>
+                                <Containerdescrition>
+                                    <h3>{product.name}</h3>
+                                    <h3>Codigo: {product.codigo}</h3>
+                                    <h3>Itens no carrinho: {productCart.find((item) => item.id === product.id)?.qtd
+                                        ? productCart.find((item) => item.id === product.id)?.qtd
+                                        : 0}
+                                    </h3>
+                                    <h2>R$ {product.price.toFixed(2)}</h2>
+                                </Containerdescrition>
                                 <ContainerIcon>
-                                    <a onClick={() => addProductCart(product.id)}><BsBasket2 /></a>
-                                    <a onClick={() => removeProductCart(product.id)}> <BsTrash /> </a>
+                                    <a onClick={() => addProductCart(product.id, product.name, product.price)}><BsBasket2 /></a>
+                                    <a onClick={() => removeProductCart(product.id, product.name, product.price)}> <BsTrash /> </a>
                                 </ContainerIcon>
                             </ContaineItemLi>
                         })}

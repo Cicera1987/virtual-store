@@ -2,13 +2,13 @@ import styled from "styled-components"
 
 export const CartList = styled.div`
   border: 1px solid #556B2F;
-  width: 20%;
+  height: 400px;
+  width: 40%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   aling-items:center;
-  padding: 0 5px;
-  margin-bottom: 5px;
+  padding: 10px;
   border-radius: 15px;
 
 `
@@ -18,4 +18,6 @@ export const CartStyle = styled.div`
     flex-direction: row;
     justify-content: center;
     aling-items:center;
+    margin: 15px;
+
 `

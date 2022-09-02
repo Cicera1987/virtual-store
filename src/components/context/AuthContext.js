@@ -8,17 +8,17 @@ export const AuthProvider = ({ children }) => {
     const [auth, setAuth] = useState(false)
     const token = localStorage.getItem("users") || null
     const [productCart, setProductCart] = useState([])
+    console.log(productCart)
 
-    function addProductCart(id) {
+    function addProductCart(id,name, price, valor) {
         const copyProductCart = [...productCart]
-        localStorage.setItem("Carrinho", JSON.stringify(productCart))
         const item = copyProductCart.find((product) => product.id === id)
         JSON.parse(localStorage.getItem('Carrinho', productCart))
         if (!productCart) return;
         setProductCart({ productCart })
         
         if (!item) {  
-            copyProductCart.push({ id: id, qtd: 1 });
+            copyProductCart.push({ id: id, name: name, price: price.toFixed(2), qtd: 1 });
         } else {
             item.qtd = item.qtd + 1;
         }
@@ -26,8 +26,7 @@ export const AuthProvider = ({ children }) => {
     }
 
     function removeProductCart(id) {
-        const copyProductCart = [...productCart];
-        localStorage.removeItem('Carrinho', JSON.stringify(productCart));    
+        const copyProductCart = [...productCart];  
         const item = copyProductCart.find((product) => product.id === id);
 
         if (item && item.qtd > 1) {
@@ -39,6 +38,7 @@ export const AuthProvider = ({ children }) => {
             );
            
             setProductCart(arrayFiltered);
+
         }
     }
 
@@ -48,13 +48,15 @@ export const AuthProvider = ({ children }) => {
 
 
     useEffect(() => {
+        localStorage.setItem('carrinho', JSON.stringify(productCart))
         if (token !== null && token === "Adm") {
             setAuth(true)
         }
         else {
             setAuth(false)
         }
-    }, [token])
+
+    }, [token, productCart])
 
     return (
         <AuthContext.Provider 

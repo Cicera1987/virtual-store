@@ -19,11 +19,10 @@ export const ContaineItemLi = styled.li`
     display: grid;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 1px 2px 6px black;
+    box-shadow: 1px 2px 5px black;
     overflow: hiden;
     height: 650px;
     width: 100%;
-    padding:3px;
 
 `
 export const ContaineShowCase = styled.div`
@@ -41,5 +40,8 @@ export const ContainerIcon = styled.div`
     cursor: pointer;
     font-size: 1.5em;
     padding: 0  1em  0 0;
-
+`
+export const Containerdescrition = styled.div`
+    padding: 1em  1em  0 0;
+    margin:8px;
 `
