@@ -47,11 +47,9 @@ const Catalogo = () => {
                 <ContainerIcon>
                     <StyleLink to="/cart"><BsCart4 /></StyleLink>
                 </ContainerIcon>
-
             </ContainerButton>
             <Pagination pages={pages} setCurrentPages={setCurrentPages} currentPage={currentPage} />
             <ContaineShowCase>
-
              <ContaineItem>
                     {!search.length > 0
                         ? currentItens && currentItens.map(product => {
