@@ -136,6 +136,14 @@ const listproducts = [
         price: 69,
 
     },
+    {
+        id: 18,
+        codigo: 1019,
+        name: "Bolsa e carteira",
+        img: "https://t4.ftcdn.net/jpg/03/52/39/99/240_F_352399957_K5rTAZuXZHamVhnV5wzErfJm09CFNCzY.jpg",
+        price: 239,
+
+    },
 ];
 
 export default listproducts

@@ -7,14 +7,14 @@ import InputSearch from '../../../atoms/Inputs/InputSearch/InputSearch'
 import Pagination from '../ModalPagination/Pagination'
 import listproducts from './Products'
 import { AuthContext } from '../../../context/AuthContext'
-import { BsBasket2, BsCart4, BsTrash } from "react-icons/bs";
-import { StyleLink } from '../../NavBar/style'
+import { BsBasket2, BsTrash } from "react-icons/bs";
+
 
 
 
 const Catalogo = () => {
     const [search, setSearch] = useState("")
-    const [itemsPage] = useState(4)
+    const [itemsPage] = useState(6)
     const [currentPage, setCurrentPages] = useState(0)
     const [products, setProducts] = useState(listproducts)
 
@@ -44,9 +44,6 @@ const Catalogo = () => {
         <>
             <ContainerButton>
                 <InputSearch search={search} setSearch={setSearch} />
-                <ContainerIcon>
-                    <StyleLink to="/cart"><BsCart4 /></StyleLink>
-                </ContainerIcon>
             </ContainerButton>
             <Pagination pages={pages} setCurrentPages={setCurrentPages} currentPage={currentPage} />
             <ContaineShowCase>

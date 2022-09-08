@@ -21,3 +21,13 @@ export const CartStyle = styled.div`
     margin: 15px;
 
 `
+export const CartTitle = styled.div`
+  height: 100px;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  aling-items:center;
+  padding: 10px;
+
+`

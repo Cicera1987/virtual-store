@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const ContaineItem = styled.div`
     display: flex;
-    grid-template-columns: auto auto auto ;
+    grid-template-columns: auto auto auto auto ;
+    flex-wrap: wrap;
     justify-content: space-between;
     max-width: 90%;
     margin-top: 1em;
@@ -22,7 +23,7 @@ export const ContaineItemLi = styled.li`
     box-shadow: 1px 2px 5px black;
     overflow: hiden;
     height: 650px;
-    width: 100%;
+    width: 30%;
 
 `
 export const ContaineShowCase = styled.div`
@@ -39,9 +40,9 @@ export const ContainerIcon = styled.div`
     color:#556B2F;
     cursor: pointer;
     font-size: 1.5em;
-    padding: 0  1em  0 0;
+    padding: 0  0.5em  0 0;
 `
 export const Containerdescrition = styled.div`
     padding: 1em  1em  0 0;
-    margin:8px;
+    margin:6px;
 `
