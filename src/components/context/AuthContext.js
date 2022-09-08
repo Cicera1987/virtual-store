@@ -1,6 +1,4 @@
 /* eslint-disable no-use-before-define */
-import { toContainHTML } from "@testing-library/jest-dom/dist/matchers";
-import { func } from "prop-types";
 import React, { createContext, useEffect, useState } from "react";
 
 
@@ -11,8 +9,6 @@ export const AuthProvider = ({ children }) => {
     const token = localStorage.getItem("users") || null
     const [productCart, setProductCart] = useState([])
     
-
-
 
     function addProductCart(id, name, price) {
         const copyProductCart = [...productCart]
@@ -48,7 +44,6 @@ export const AuthProvider = ({ children }) => {
 
         }
     }
-
 
     function clearCart() {
         setProductCart([]);

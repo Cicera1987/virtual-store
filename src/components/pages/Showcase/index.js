@@ -1,13 +1,13 @@
 import { ContaineItem, ItemProdutos } from './style'
 import Catalogo from '../../molecules/Modal/ModalCreate/Catalogo'
 
-const Showcase = (produtos) => {
+const Showcase = ({products}) => {
 
   return (
 
     <ContaineItem>
         <ItemProdutos>
-          <Catalogo key={produtos} produtos={produtos} />
+          <Catalogo key={products} produtcts={products} />
         </ItemProdutos>
       </ContaineItem>
 

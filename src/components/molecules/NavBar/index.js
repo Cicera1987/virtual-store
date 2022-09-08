@@ -1,12 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { VscGear } from "react-icons/vsc";
 import { PageNavbar, LinkList, LinkListLi, StyleLink, CardIcon } from './style'
 import { BsFillHandbagFill, BsCart4 } from "react-icons/bs";
 import { BiStore } from "react-icons/bi";
 
 
-const NavBar = () => {
 
+const NavBar = () => {
+  
   return <PageNavbar>
     <CardIcon>
     <StyleLink to="/"><BiStore/></StyleLink>
@@ -22,7 +23,8 @@ const NavBar = () => {
 
       <LinkListLi>
         <CardIcon>
-          <StyleLink to="/cart"><BsCart4 /></StyleLink>
+          <StyleLink to="/cart"><BsCart4 />
+          </StyleLink>
         </CardIcon>
       </LinkListLi>
 

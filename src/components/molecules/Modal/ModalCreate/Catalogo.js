@@ -5,9 +5,11 @@ import React, { useState, useEffect, useContext } from 'react'
 import { ContaineItem, ContainerButton, ContaineItemLi, ContaineShowCase, ContainerIcon, Containerdescrition } from './style'
 import InputSearch from '../../../atoms/Inputs/InputSearch/InputSearch'
 import Pagination from '../ModalPagination/Pagination'
-import listproducts from './Products'
+import listproducts from '../ModalProduct/ListProducts'
 import { AuthContext } from '../../../context/AuthContext'
-import { BsBasket2, BsTrash } from "react-icons/bs";
+import { BsBasket2, BsTrash, BsCart4 } from "react-icons/bs";
+
+import { StyleLink } from '../../NavBar/style'
 
 
 
@@ -22,6 +24,8 @@ const Catalogo = () => {
     const startIndex = currentPage * itemsPage;
     const endIndex = startIndex + itemsPage;
     const currentItens = products.slice(startIndex, endIndex)
+
+    
 
     const {
         productCart = [listproducts],
@@ -40,10 +44,21 @@ const Catalogo = () => {
     const filteredProduct = search.length > 0 ?
         products.filter((obj) =>
             obj.name.toLowerCase().includes(search.toLowerCase())) : [];
+            
     return (
         <>
+            
+
             <ContainerButton>
                 <InputSearch search={search} setSearch={setSearch} />
+
+                {productCart.map(product =>
+                    <StyleLink to="/cart"><BsCart4 />
+                        {productCart.find((item) => item.id === product.id)?.qtd
+                            ? productCart.find((item) => item.id === product.id)?.qtd
+                            : 0 }
+                    </StyleLink>)}
+
             </ContainerButton>
             <Pagination pages={pages} setCurrentPages={setCurrentPages} currentPage={currentPage} />
             <ContaineShowCase>

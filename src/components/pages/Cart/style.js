@@ -2,8 +2,8 @@ import styled from "styled-components"
 
 export const CartList = styled.div`
   border: 1px solid #556B2F;
-  height: 400px;
-  width: 50%;
+  height: 100%;
+  width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
